@@ -1,2 +1,2 @@
 # git1
-git myskill learning
+"D:\Software\Software\Steam\Steam.exe" -no-browser +open steam://open/minigameslist
