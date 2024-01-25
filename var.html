@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh Integrasi Java dan HTML</title>
+</head>
+<body>
+    <h1>Selamat Datang!</h1>
+    <p>Hasil eksekusi kode JavaScript:</p>
+    <script>
+        const obj = { id: 1, name: 'Joko' };
+        obj.age = 21;
+        console.log(obj);
+
+        const array = [1, 2, 3];
+        array.push(4);
+        console.log(array);
+
+        {
+            var c = 4;
+            const b = 3;
+            // const tidak bisa dideklarasikan ulang/mengubah nilainya
+            let a = 2 + 6;
+            // let tidak bisa dideklarasikan ulang, tetapi bisa diubah nilainya
+            console.log(c, b, a);
+        }
+     
+        {
+            console.log(c);
+            // var bersifat public dalam
+            // close scope {} masih bisa terpanggil
+        }
+
+        {
+            let a1 = 2;
+            console.log(a1 / 0);
+        }
+
+        {
+            let str = 'andi';
+            let str2 = 'budi';
+            let names = `the names are ${str} and ${str2}`;
+            console.log(names);
+            // backtick ` agar bisa melakukan fungsi seperti jumlah di 
+            // dalam let yang umumnya hanya bisa store 1 variable 1 let
+            console.log(`result: ${1 + 2}`);
+        }
+
+        {
+            let judul = 'contoh boolean';
+            console.log(judul);
+        }
+        {
+        let bol1=2;
+        let bol2=4;
+        console.log(`apakah 2 lebih besar dari 4? ${bol1 > bol2}`);
+        }
+    </script>
+</body>
+</html>
