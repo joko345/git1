@@ -23,14 +23,15 @@
             // let tidak bisa dideklarasikan ulang, tetapi bisa diubah nilainya
             console.log(c, b, a);
         }
-     
+
         {
-            console.log(c);
             // var bersifat public dalam
             // close scope {} masih bisa terpanggil
+            console.log(c);
         }
 
         {
+            // Contoh pembagian dengan nilai tak terhingga
             let a1 = 2;
             console.log(a1 / 0);
         }
@@ -40,19 +41,31 @@
             let str2 = 'budi';
             let names = `the names are ${str} and ${str2}`;
             console.log(names);
-            // backtick ` agar bisa melakukan fungsi seperti jumlah di 
-            // dalam let yang umumnya hanya bisa store 1 variable 1 let
+           
+            // Backtick ` agar bisa melakukan fungsi seperti jumlah di dalam let
+            // yang umumnya hanya bisa store 1 variable 1 let
             console.log(`result: ${1 + 2}`);
         }
 
         {
-            let judul = 'contoh boolean';
-            console.log(judul);
+            //
+            console.log(' Contoh boolean');
+            let bol1 = 2;
+            let bol2 = 4;
+            console.log(`apakah 2 lebih besar dari 4? ${bol1 > bol2}`);
+            console.log(bol1 === '4');
+            console.log('bol 2 tidak sama dengan "4 karena itu string')
+            console.log('sama dengan tiga kali untuk membedakan number dengan string')
         }
+
         {
-        let bol1=2;
-        let bol2=4;
-        console.log(`apakah 2 lebih besar dari 4? ${bol1 > bol2}`);
+           
+            console.log(' Contoh array');
+            let arr = ['Apple', 'banana', 'orange'];
+            console.log(arr);
+              let judul = 'contoh type off (untuk mengecek variable bertipe data apa)';
+            console.log(judul);
+            console.log('Tipe data judul:', typeof(judul));
         }
     </script>
 </body>
