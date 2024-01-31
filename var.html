@@ -9,11 +9,14 @@
     <script>
         const obj = { id: 1, name: 'Joko' };
         obj.age = 21;
+        console.log(obj.name);
+        console.log(obj['age']);
+        obj.MasihSekolah = 'Benar';
+        // dengan titik bisa menambah value baru
         console.log(obj);
-
-        const array = [1, 2, 3];
-        array.push(4);
-        console.log(array);
+        delete obj.MasihSekolah;
+        obj.age = 31;
+        console.log(obj);
 
         {
             var c = 4;
@@ -39,33 +42,95 @@
         {
             let str = 'andi';
             let str2 = 'budi';
-            let names = `the names are ${str} and ${str2}`;
+            let names = `Namanya adalah ${str} dan ${str2}`;
             console.log(names);
-           
+
             // Backtick ` agar bisa melakukan fungsi seperti jumlah di dalam let
             // yang umumnya hanya bisa store 1 variable 1 let
             console.log(`result: ${1 + 2}`);
         }
 
         {
-            //
-            console.log(' Contoh boolean');
+            console.log('Contoh boolean');
             let bol1 = 2;
             let bol2 = 4;
             console.log(`apakah 2 lebih besar dari 4? ${bol1 > bol2}`);
             console.log(bol1 === '4');
             console.log('bol 2 tidak sama dengan "4 karena itu string')
             console.log('sama dengan tiga kali untuk membedakan number dengan string')
+            let tru1 = true;
+            let tru2 = false;
+            console.log(tru1 || tru2);
+            console.log('true or false = true');
+            let hour = 8;
+            if (hour < 9 || hour > 18) {
+                console.log('Kantor Tutup');
+            }
+            let hour1 = 8;
+            let hour2 = 22;
+            let hour3;
+            console.log(!hour1);
+            console.log('not ! mengembalikan nilai misal awal nilai true dikasih ! menjadi false')
+            console.log(hour1 ?? 'Anonymous');
+            console.log(hour3 ?? hour2);
+            // mengecek ada nilai, jika tidak akan menampilkan anonymous
+            // karena hour3 kosong maka akan mengambil nilai hour2
+            if (hour1 == 8 && hour2 == 22) {
+                console.log('Kantor buka');
+            }
         }
 
         {
-           
-            console.log(' Contoh array');
-            let arr = ['Apple', 'banana', 'orange'];
+            console.log('Contoh array');
+            let arr = ['Apple', 'banana', 'orange']; // 0 apple, 1 banana, 2 orange
             console.log(arr);
-              let judul = 'contoh type off (untuk mengecek variable bertipe data apa)';
+        
+            // Perbaikan pada baris berikut
+            let arr2 = `Array urutan 2 indeks pertama ${arr[1]}`;
+            console.log(arr2);
+        
+            let judul = 'contoh type off (untuk mengecek variable bertipe data apa)';
             console.log(judul);
+        
+            // Perbaikan pada baris berikut
+            console.log('mengubah value dalam array 1 "banana" ')
+            arr[1] = 'Durian';
+            console.log(arr[1]);
+            
+            console.log('menambah elemen array');
+            arr[3]='Jagung';
+            console.log(arr);
+            
+            let arr3 = arr.length
+            console.log(`Panjang array ${arr.length}`);
             console.log('Tipe data judul:', typeof(judul));
+        }
+        
+
+        
+        {
+            function BuatUser(name, age) {
+                return {
+                    name: name,
+                    age,
+//karena nilai disini dan dibawah sama maka bisa disingkat
+                };
+            }
+            console.log('contoh function -shorthand')
+            let user = BuatUser('Joko', 21);
+            console.log(user);
+        }
+        console.log('Contoh Property Existance mengecek ada tidak suatu variable/nilai')
+        let prop={user:'Joko Prasetyo', age:21,};
+        let adaGa='age';
+        console.log('age' in prop);//result true
+        console.log(adaGa in prop);//bisa deklare lagi atau langsung age in prop
+        console.log('MasihSekolah' in prop);//result false 
+        console.log('Contoh Looping');
+        for(let lop in prop){
+            console.log(lop);//output user,age
+            console.log(prop[lop]);//output isi dari user,age (joko,21)
+
         }
     </script>
 </body>
