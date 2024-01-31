@@ -100,7 +100,9 @@
             console.log('menambah elemen array');
             arr[3]='Jagung';
             console.log(arr);
-            
+            console.log('mencari isi dalam array memakai indexOf =');
+            let cari=arr.indexOf('Durian');
+            console.log(cari);
             let arr3 = arr.length
             console.log(`Panjang array ${arr.length}`);
             console.log('Tipe data judul:', typeof(judul));
@@ -132,6 +134,43 @@
             console.log(prop[lop]);//output isi dari user,age (joko,21)
 
         }
+        console.log('contoh if satu baris');
+        let year=2024;
+        if (year==2024) console.log('Sekarang Tahun 2024');
+        console.log('contoh if curly braces "{}"');
+        
+        let nextyear=2024
+        let previousyear=2023
+        let a1= nextyear=>2023
+        let b= previousyear<2023
+        if(a1)
+        {
+            console.log('Jawaban Benar');
+            console.log('Sekarang Tahun 2024');
+        }else if (b){
+            console.log('Sekarang Bukan Tahun 2024');
+        }else{
+            console.log('tidak ada yang cocok')
+        }
+        console.log('Contoh Nested IF');
+        let number = 0;
+        if (number >= 0) {
+            if (number == 0) {
+                console.log('Input benar 0');
+            } else {
+                console.log('Anda Input bilangan positif');
+                //Jika number positif satu keatas
+            }
+        } else {
+            console.log('Anda memasukkan bilangan negatif');
+            //Jika nilai number negatif
+        }
+        
+          
+          
+
+        
+
     </script>
 </body>
 </html>
