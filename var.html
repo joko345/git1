@@ -165,9 +165,26 @@
             console.log('Anda memasukkan bilangan negatif');
             //Jika nilai number negatif
         }
+        console.log('Contoh Switch');
+        let a = 0 ;
+        console.log(new Date() .getDay());
+        switch (new Date() .getDay()) {
         
-          
-          
+            case 6:
+            case 0:
+            console.log("Ini Weekend");
+            break;
+        //break memutus pengulangan/tidak menjalan kode setelahnya
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            console.log("Ini Weekday");
+
+        default:
+        console.log('Hari kerja');
+}
 
         
 
