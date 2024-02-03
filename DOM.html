@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh DOM</title>
+</head>
+<body>
+    <h1>Selamat Datang!</h1>
+    <p id="intro">Mencari html element dengan id</p>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p class="no">Hello World</p>
+    <p class="no">One Man</p>
+    <script>
+        const ele = document.getElementById('intro');
+        document.getElementById('demo2').innerHTML = 'Teks Dimasukkan ke id demo: ' + ele.innerHTML;
+        // Mengambil/get isi intro dan memasukannya ke demo beserta teks baru dari innerHTML
+        // id unik hanya satu, class bisa banyak.
+        console.log(ele);
+        console.log('-----------------------');
+
+        // Memperbaiki kesalahan saat mengambil elemen dengan class
+        const klas = document.getElementsByClassName('no');
+        document.getElementById('demo').innerHTML = 'Teks Dimasukkan ke class "no" lenght 1: ' + klas[1].innerHTML;
+        console.log(klas);
+        console.log('--------------------------------------------');
+
+        console.log('Contoh DOM(Document Object Model)');
+        let url=document.URL
+        console.log(url);
+        console.log('Dom dibuat berdasarkan sistem tree of objects')
+        let headUrl=document;
+        console.log(headUrl)
+
+    </script>
+
+</body>
+
+</head>
+
+</html>
