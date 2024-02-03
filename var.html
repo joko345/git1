@@ -7,6 +7,7 @@
     <h1>Selamat Datang!</h1>
     <p>Hasil eksekusi kode JavaScript:</p>
     <script>
+    //objek adalah tipe data kompleks yang berada dalam {}
         const obj = { id: 1, name: 'Joko' };
         obj.age = 21;
         console.log(obj.name);
@@ -83,6 +84,7 @@
         {
             console.log('Contoh array');
             let arr = ['Apple', 'banana', 'orange']; // 0 apple, 1 banana, 2 orange
+           
             console.log(arr);
         
             // Perbaikan pada baris berikut
@@ -138,7 +140,7 @@
         let year=2024;
         if (year==2024) console.log('Sekarang Tahun 2024');
         console.log('contoh if curly braces "{}"');
-        
+        //strict comparisson adalah ===
         let nextyear=2024
         let previousyear=2023
         let a1= nextyear=>2023
@@ -167,6 +169,7 @@
         }
         console.log('Contoh Switch');
         let a = 0 ;
+        //variable harus sama, karna a=0 var/numerik maka case harus numerik
         console.log(new Date() .getDay());
         switch (new Date() .getDay()) {
         
@@ -185,9 +188,147 @@
         default:
         console.log('Hari kerja');
 }
-
+        //for (initialExpression; Condition; UpdateExpression)
+        console.log('--Contoh for Loop--');
+        for (let i=0; i<=3; i++){
+            console.log(`berapa kali jalan ${i}`);
+        }
         
+        console.log('[Contoh while Loop ++]')
+        let whi=0;
+        while(whi<3){
+            console.log(whi);  
+            whi++;
+        }
+        console.log('[Contoh while Loop --]')
+        let whi2=4;
+        while(whi2){
+            console.log(whi2);
+            whi2--;
+        }
+        console.log('--Contoh do while--')
+        let result=0;
+        i=0;
+        do{
+            i=i+1;
+            result=result+i;
+            console.log(i);
+        }while (i<3);
+        console.log('--Contoh Continue Statement--')
+        for(let stat1=0; stat1<10; stat1++){
+            // bukan atau NOT adalah ==!
+            if(stat1 % 2 ==0)continue;
+            //Jika stat1 dibagi 2 hasilnya bukan 0 maka stat1 akan diprint
+            //jika stat1 hasilnya 0 maka pengulangan akan dilanjutkan/continue
+            console.log(stat1);
+        }
+        //for of mengulang array sesuai isi yang ada
+        console.log('--Contoh For Of--') 
+        let okk=['Apple','Pisang','Durian'];
+        for (let ok of okk){
+            console.log(ok);
+        
+        }
+        
+        console.log('--Contoh For of 2--') 
+        const Teks='Kars';
+        for (const char of Teks){
+        //char merupakan command untuk mengurutkan abjad
+            console.log(char);
+        }
 
+        console.log('--Contoh Set--') 
+        const char=new Set([1,2,3]);
+        for (const character of char){
+            console.log(char);
+        }
+        
+        console.log('--Contoh Map--') 
+        const mop=new Map([['Joko',1],['Utomo',2]]);
+        for (const ubah of mop){
+        //Mengurutkan isi array satu persatu
+            console.log(ubah);
+        }
+
+        console.log('--Contoh Destruction Pada For of--') 
+        const des=new Map([['Joko',1],['Utomo',2]]);
+        for (const[key, value] of des){
+            console.log(`key=${key}, value=${value}`);
+
+        }
+        console.log('--Contoh for in--')
+        let person = {
+            name: 'John',
+            age: 30,
+            gender: 'male'
+        };
+        
+        for (let key in person) {
+            console.log(key + ': ' + person[key]);
+        //for in untuk pengulangan dalam objek yang ditandai {}
+        }
+       
+        console.log('---CONTOH FUNCTION---');
+        function greet(){
+            console.log('Hello World')
+        }
+        function Halo(){
+            greet();
+        }
+        Halo();
+        //pemanggilan function paling atas/bawah sama saja
+        console.log('Contoh Parameter dalam Function');
+        function tambahkan(angka1, angka2) {
+            let hasil = angka1 + angka2;
+            console.log('Hasil penambahan:', hasil);
+        }
+        
+        // Memanggil fungsi dengan memberikan argumen
+        tambahkan(5, 3); // Output: Hasil penambahan: 8
+        tambahkan(10, 7); // Output: Hasil penambahan: 17
+        function pesan(from, text='Sehat'){
+            console.log(from+': '+text);
+        //text='' adalah nilai default jika parameter tidak terisi
+        }
+        pesan('Joko','Utomo');
+        pesan('Benar',);
+
+
+        console.log('Contoh Return Value')
+        function tambah(angka1, angka2) {
+            return angka1 + angka2;
+            }
+        let hasil=tambah(5, 3);
+        console.log(hasil);
+        //return mengembalikan nilai kedalam function
+        console.log('Contoh Return Value 2')
+        function checkAge(age) {
+            if (age >= 18) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+        let age = 18;
+        if (checkAge(age)) {
+        //memanggil fungsi checkAge dan memasukan isi let age kedalam
+        //fungsi checkAge, setelah itu fungsi mengecek apakah age>=18
+        //jika benar maka return true dan peryantaan if else dijalankan
+        //menghasilkan output "izin diberikan"
+            console.log('Izin Diberikan');
+        } else {
+            console.log('Izin Ditolak');
+        }
+        function Job(age){
+            if(!checkAge(age)){
+            //jika age tidak sesuai dengan kebutuhan yaitu age>=18
+            //maka console.log dibawah tidak akan dijalankan
+                return;
+            }
+            console.log('Daftar Job')
+        }
+        Job(age);
     </script>
 </body>
 </html>
