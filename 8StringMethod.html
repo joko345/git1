@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh 8</title>
+</head>
+<body>
+    <h2>WINDOWS</h2>
+    <p id="p"></p>
+   <script>
+       
+        console.log('String Method')
+        let m='Kita mau mau coba \'pakai\''
+        console.log(m);
+        console.log(m.toUpperCase());//jadi uppercase/capslockAll
+        console.log(m.replace(/mau/i,'batman').toUpperCase());
+        //bisa dicombine
+        console.log(m.length);
+        console.log(m.slice(5,9));
+       
+        //mengambil karakter dari jumlah start,end
+        //jika tidak memberi end, maka dari start mengambil semua
+        //string kedepannya
+        //substring akan menganggap start/ennd minus -7 sebagai 0
+        //substr dari start-length 5,3 akan menghasilkan "mau"
+        let newM=m.replace('Kita','Microsoft');
+        //mengganti kita dengan microsoft
+        //case sensitive, kata yang ingin diganti harus sama capsnya
+        console.log(newM);
+        let baruM=m.replace(/KITA/i,'Microsoft');
+        //dengan ini akan mengharaukan case sensitive(regex)
+        console.log(baruM);
+        let duaM=m.replace(/mau/g,'Microsoft');
+        //replace semua kata yang sama tapi tetap case sensitive
+        console.log(duaM);
+    </script>
+</body>
+</html>
