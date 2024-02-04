@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh DOM 4</title>
+    <style>
+        #myP{
+            background-color: green;
+        }
+    </style>
+    <!-- Ini css outline akrena didalam head -->
+</head>
+<body>
+    <!-- css inline didalam body -->
+    <p id="myP">click the button to give background color red</p>
+    <button onclick="bgRed()">Try it!</button>
+    <script>
+    function bgRed(){
+        document.getElementById('myP').style.backgroundColor='red';
+        document.getElementById('myP').style.color='blue';
+        //mengubah style myP
+    }
+</script>
+
+</body>

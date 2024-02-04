@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh 6</title>
+    <style>
+        body{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>WINDOWS</h2>
+    <P>Try resize to trigger the event</P>
+    <p id="p"></p>
+    <p id="p"></p>
+    <button id="Button1">Try it!</button>
+    <script>
+        var x = document.getElementById('Button1');
+        //document.getElementById('Button1').addEventListener('click',greet);
+        //bisa pakai var/document
+        x.addEventListener('click',greet);
+        x.addEventListener('click',greet2);
+        //event=click, setelah click menjalankan function greet
+    function greet(){
+        alert('hello world');
+    //saat tombol diclick muncul pop up hello world
+    }
+    function greet2(){
+        alert('world');
+    }
+    window.addEventListener('resize', function(){
+        document.getElementById('p').innerHTML = Math.random();
+    });
+</script>
+
+</body>

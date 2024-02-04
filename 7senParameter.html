@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh 7</title>
+</head>
+<body>
+    <h2>WINDOWS</h2>
+    <p id="p"></p>
+    <button id="Button1">Try it!</button>
+    <script>
+        let p1 = 5;
+        let p2 = 3;
+  
+        document.getElementById('Button1').addEventListener('click', function(){
+          myFunction(p1, p2);
+        });
+        //document.getElementById('Button1').addEventListener('click', myFunction(p1, p2));
+        //kode diatas langsung output tanpa klik tombol
+        function myFunction(a, b){
+            document.getElementById('p').innerHTML = a + b;
+        }
+    </script>
+</body>
+</html>

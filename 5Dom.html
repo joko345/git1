@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh DOM 5</title>
+    <style>
+        body{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="bgRed()">Try it!</button>
+    <p id="new"></p>
+    <script>
+    function bgRed(){
+        var x = document.getElementsByTagName('STYLE')[0];
+        //karena style hanya ada 1 maka ada di index 0
+        document.getElementById('new').innerHTML = x.innerHTML;
+        //mengecek property dari style
+        //eventlistener button adalah targetnya, click adalah eventnya
+    }
+</script>
+
+</body>
