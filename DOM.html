@@ -7,6 +7,7 @@
     }</style>
 </head>
 <body>
+
     <h1>Selamat Datang!</h1>
     <p id="intro">Mencari html element dengan id</p>
     <p id="demo">Demo</p>
@@ -16,7 +17,11 @@
     <p class="no">Hello World</p>
     <p class="no">One Man</p>
     <p class="no">Three Musketeer</p>
+    <div id="div1">Teks Default</div>
+   
     <script>
+        
+        
         console.log('getElementByTagName')
         const tag = document.getElementsByTagName('p');
         document.getElementById('demo').innerHTML = 'Teks Dimasukkan ke tagName p length 1: ' + tag[1].innerHTML;
@@ -50,7 +55,28 @@
         console.log('Dom dibuat berdasarkan sistem tree of objects')
         let headUrl=document;
         console.log(headUrl)
+    
+        
+        document.body.onload=addElement;
+        function addElement(){
 
+            const divBaru=document.createElement('div');
+            //membuat elemen div baru
+            const kontenBaru=document.createTextNode('Halo Semuanya');
+            //isi div baru yang hendak diisi
+            divBaru.appendChild(kontenBaru);
+            //appenchild menambahkan kode ke akhir daftar child daru node parent
+            //menandakan child yang ingin diisi konten baru 
+            const currentDiv=document.getElementById('div1');
+            //memanggil child yang ditarget yaitu div1
+            document.body.insertBefore(divBaru, currentDiv);
+            //memasukkan div baru diatas div yang dipanggil
+            //div childnya adalah isinya
+            //document.body.insertBefore(divBaru, currentDiv.nextSiblings);
+            //expresi diatas membuat div baru dibuat dibawah div1 karena Siblings/adik adik dibawah kaka 
+            
+            }
+        
     </script>
 
 </body>

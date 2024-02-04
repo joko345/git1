@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh DOM</title>
+
+</head>
+<body>
+    <ul id="myList">
+        <li>Coffe</li>
+        <li>Tea</li>
+    </ul>
+    <p>click the button to append an item to the end of list</p>
+    <button onclick="apen()">Try it!</button><!-- baris 63 -->
+
+<script>
+    function apen(){
+        let node = document.createElement('LI');
+        let textNode = document.createTextNode('water');
+        node.appendChild(textNode);
+        document.getElementById('myList').appendChild(node); 
+        //appendchild disini menambahkan anak baru dari parent ul
+    }
+</script>
+
+</body>
