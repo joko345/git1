@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh 9</title>
+</head>
+<body>
+    <h2>WINDOWS</h2>
+    <p id="p"></p>
+   <script>
+        let a= '20';
+        let b= 10.132;
+        let c= 5;
+        let d= 2;
+        let pangkat= Math.pow(c,d);
+        console.log(a);
+        console.log(b);//warna string dan num di output berbeda
+        console.log(b.toString());
+        console.log(b.toExponential(2));//menyingkat bilangan besar
+        console.log(b.toFixed());//membulatkan bilangan
+        console.log(b.toFixed(2));//spesifik bilangan mana yang dibulatkan
+        console.log(b.toPrecision(3));//menyingkat hasil output ke jumlah yng diinginkan
+        console.log(Math.round(b));//membulatkan bilangan terdekat 5.6=6 5.4=5        
+        console.log(Math.ceil(b));//membuatlakan ke atas 5.4=6
+        console.log(Math.floor(b));//membuluatkan bilangan ke bawah
+        console.log(Math.trunc(b));
+        //menghiraukan bilangan setelah koma, dan menghasilkan output dari value paling depang
+        console.log(Math.pow(c,d));//c pangkat d
+        console.log(Math.sqrt(pangkat));//hasil akar
+        console.log(Math.min(100,20,40,60,22));
+        //menghasilkan angka terendah dari deretan angka
+        console.log(Math.max(100,20,40,60,22));
+        //menghasilkan angka tertinggi dari deretan angka
+        console.log(Math.random());
+        //menghasilkan angka random
+        console.log(Math.floor(Math.random() * 10));
+        //menghasilkan bilangan bulat 0-9 jika makai ceil tidak akan menghasilkan angka 0. jadi 1-9
+        
+        
+        const fruits= ["apel","grape","banana","orange"];
+        const animal= ["dog","cat"];
+        fruits.splice(2,0, "Joko","Mono");
+        //2 posisi elemen mana yang diganti, 0 berapa elemen yang dihapus setelah elemen 2 diganti
+       // fruits.splice(1,2);//output apel,orange
+        //1 index akan dirubah, 2 index setelah index awal akan dihapus
+        console.log(fruits);
+        console.log(fruits.slice(1,3));
+        //mengambil array index 1 dan 2
+        console.log(fruits.toString());//array ke string
+        console.log(fruits.join(" "));//array ke string dengan bisa memilih pembatas
+        let fruit= fruits.shift();
+        console.log(fruits);
+        console.log(fruit);
+        let fruit2= fruits.unshift('Manggo');
+        console.log(fruits);
+        console.log(fruit2);
+        let gabung=fruits.concat(animal);
+        fruits[fruits.length+ 1]='Jon';
+        //akan ditambah longkap satu kolom.
+        console.log(fruits);
+        console.log(gabung);
+        delete gabung[0];//hapus elemen array
+        console.log(gabung);
+        const cars=[
+            {type:'honda', year:2032},
+            {type:'benz', year:2022}  
+        ];
+        cars.sort(function(a,b){return a.year-b.year});
+        //mengurutkan array fungsi berdasarkan angka tahun terkecil
+        console.log(cars);
+
+</script>
+</body>
+</html>

@@ -7,7 +7,6 @@
     <h2>WINDOWS</h2>
     <p id="p"></p>
    <script>
-       
         console.log('String Method')
         let m='Kita mau mau coba \'pakai\''
         console.log(m);
@@ -32,6 +31,15 @@
         let duaM=m.replace(/mau/g,'Microsoft');
         //replace semua kata yang sama tapi tetap case sensitive
         console.log(duaM);
+        let a='20';
+        let b=10.532;
+        console.log(a);
+        console.log(b);//warna string dan num di output berbeda
+        console.log(b.toString());
+        console.log(b.toExponential(2));//menyingkat bilangan besar
+        console.log(b.toFixed());//membulatkan bilangan
+        console.log(b.toFixed(2));//spesifik bilangan mana yang dibulatkan
+        console.log(b.toPrecision(3));//menyingkat hasil output ke jumlah yng diinginkan
     </script>
 </body>
 </html>
