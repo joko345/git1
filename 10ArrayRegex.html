@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh 10</title>
+</head>
+<body>
+    <h2>WINDOWS</h2>
+    <p id="p"></p>
+   <script>
+    let numbers=[100,70,80,60,10];
+    numbers.forEach(myFunct);
+    function myFunct(value, index, array){
+    //value membuat output array berurutan ke bawah
+    //index, index array 0,1,2,3,41
+    //array. output array biasa
+    console.log("Value:", value, "Index:", index);
+    }
+    let numbers2= numbers.map(my);
+    function my(value, index, array){
+        return value * 2;
+    //map berfungsi menjumlahkan elemen array dan menghasilkan output
+    //tanpa mengubah elemen aslinya. output terdapat di fungsi sendiri
+    //bukan di array aslinya
+    }
+    console.log(numbers2);
+
+    //filter. menyortir array yang melebihi target akan ditampilkan
+    const over50=numbers.filter(ngurut).sort(function(a,b){return a - b})
+    //return b-a mengurutkan dari terbesar ke terkecil
+    //return a=b mengurutkan terkecil ke terbesar
+    const allOver50=numbers.every(ngurut)
+    const someOver50=numbers.some(ngurut) 
+    function ngurut(value, index, array){
+        return value>50;
+    }
+    console.log(over50)    //array lebih dari 50 akan ditampilkan
+    console.log(allOver50)//mengecek apakah semu a angka melebihi 50 jika tidak false
+    console.log(someOver50)//jika ada satu angka yang melebihi 50 akan true
+    console.log(numbers.indexOf(70))//mencari elemen array
+    const dimana=[33,83,15,72]
+    const cari=dimana.find(look)
+    function look (value, index, array){
+        return value > 60
+    }
+    console.log(cari)
+    //mencari elemen pertama dalam index array yang > 60
+    let kata = 'bara Membawa bara bara ke rumah nami';
+    let aku= "golden"
+    let kataDimana = kata.match(/bara/gi);
+    console.log(kataDimana);
+    const reg=/[br]/;
+    console.log(reg.test(aku));
+    //mencari apakah dalam var ada huruf br, jika tidak false
+
+    console.log('regex password');
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    //^: Mencocokkan awal string.
+    //(?=.*[a-z]): Harus mengandung setidaknya satu huruf kecil.
+    //(?=.*[A-Z]): Harus mengandung setidaknya satu huruf besar.
+    //(?=.*\d): Harus mengandung setidaknya satu angka.
+    //(?=.*[@$!%*?&]): Harus mengandung setidaknya satu karakter khusus.
+    //[A-Za-z\d@$!%*?&]{8,}: Mengandung karakter huruf besar, huruf kecil, angka, dan karakter khusus, minimal 8 karakter.
+    //$: Mencocokkan akhir string.
+    // Contoh penggunaan:
+    const password1 = 'P@ssw0rd';
+    const password2 = 'weakpass';
+
+    console.log(passwordRegex.test(password1)); // true
+    console.log(passwordRegex.test(password2)); // false
+
+   
+</script>
+</body>
+</html>

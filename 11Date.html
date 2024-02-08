@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh 10</title>
+</head>
+<body>
+    <h2>WINDOWS</h2>
+    <p id="p"></p>
+   <script>
+    
+    let d=new Date(2002, 4, 12, 15, 12, 21, 11);
+    //tanggal bisa disetting numerik/string sama saja
+    console.log(d);
+    console.log(d.toUTCString());
+    //tanggal ditampilkan sesuai format penanggalan pada umumnya
+    console.log(d.toDateString());
+    //hanya tanggal tanpa menyertakan waktu
+    let tgl=new Date('2002-2');
+    //format tidak lengkap menerima string
+    console.log(tgl)
+    console.log('short date')
+    const pendek= new Date('04/12/2002');
+    console.log(pendek);
+    console.log('long date')
+    const long= new Date('Apr 12 2002');
+    console.log(long);
+    console.log('membuat tanggal sendiri/mengganti bahasa,dst')
+    const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    const today = new Date();
+    const hari = today.getDay(); // Mengembalikan angka 0-6, dimana 0 adalah Minggu, 1 adalah Senin, dst.
+    const dayName = days[hari];
+    console.log(dayName);
+    let nam= new date();
+    d.setFullYear(2021);
+    console.log(d);
+    //set menyetting tahun 2021 tapi bulan dan hari sama
+    //get mengambil tanggal berapa sekarang
+</script>
+</body>
+</html>
