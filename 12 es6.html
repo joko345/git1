@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh 10</title>
+</head>
+<body>
+    <h2>WINDOWS</h2>
+    <p id="p"></p>
+   <script>
+    console.log('tanpa argumen');
+    const kosong=()=>console.log('something');
+    kosong();
+    
+    console.log('satu argumen');
+    const satu=a=>console.log(a);
+    satu('Jauh');
+
+    console.log('dua argumen');
+    const nilai=(a,b)=>console.log(a+b);
+    nilai(2,6);
+    console.log('multiline');
+    const age= n =>{
+        if( age <= 17 ){
+            return false;
+        }
+        return true;
+    }
+    console.log(age(18));
+
+    console.log('Spread Syntax')
+    const arraySatu=[3,4]
+    const arrayDua=[1,2, ...arraySatu];
+    console.log(arrayDua)
+    //menggabungkan isi arraySatu ke arrayDua
+    
+    const obj1={
+        Name:'Joko',
+        Age: 21
+    };
+    const obj2={
+        Lahir:'2002'
+    };
+    const obj3={ ...obj1, ...obj2};
+    //const obj3=Object.assign(obj1,obj2);
+    console.log(obj3)
+
+    console.log('For of Loop')
+    const angka=[100,200,300,400];
+    for(const angk of angka){
+        console.log(angk);
+    }
+    const alpa='abcd'
+    for(const ap of alpa){
+        console.log(ap);
+    }
+    //for in untuk object
+    //for off untik variable lain
+
+    console.log('Filter (High Order Function)')
+    const murid=[
+        {Nama:'Jon', age:21},
+        {Nama:'Alex', age:16},
+        {Nama:'Rian', age:12},
+    ];
+    const output= murid.filter(hasil => hasil.age >13);
+    console.log(output)
+    
+    const stud=[
+        {Nama:'Jon', age:21},//previous value
+        {Nama:'Alex', age:16},//current value
+        {Nama:'Rian', age:12},
+    ];
+    //map membuat array baru dari data array yang sudah ada
+    const keluar= stud.map((mep)=>`${mep.Nama} berusia ${mep.age}`);
+    console.log(keluar)
+  
+    console.log('Reduce High Order Function') 
+    const sumAge=stud.reduce((prev, current)=> prev + current.age, 0);
+    //prev index 0 lalu ditambah current, hasil jumlah akan disimpan di prev, setelah itu dijumlah current lagi seterusnya
+    const Avg=sumAge/stud.length;
+    console.log(Avg);
+    
+    console.log('currying')
+    const url= (protocol) => (hostname) => (page) => `${protocol}${hostname}${page}`;
+    const httpMy=url('http/')('WWW/');
+    const login=httpMy('login');
+    const daftar=httpMy('Daftar');
+    console.log(daftar);
+    //bedanya menyingkat deklrasi ulang
+    //pemanggilan hanya memanggil cost yang ingin dipakai
+    console.log('tanpa currying')
+    const alamat = (protocol) => (hostname) => (page) => `${protocol}${hostname}${page}`;
+    const alamatLogin = alamat('http')('www')('login');
+    const alamatDaftar = alamat('http')('www')('daftar');
+    console.log('Alamat Login:', alamatLogin);
+    console.log('Alamat Daftar:', alamatDaftar);
+
+    console.log('Destructing')
+    //menyingkat pemanggilan elemen array dengan
+    //menaruhnya di array baru yang berisi elemen array tersebut
+    const array1=['book','Watch'];
+    const [des1, des2, des3 = 'default'] =array1//jika array kosong bisa setting default
+    //bisa juga seperti ini agar lebih simpel
+    //const [des1, des2]=['book','Watch'];
+    console.log(des2);
+    //pemanggilan array biasa
+    const first = array1[0];
+    console.log(first)
+
+    const obj = { id,name }={//bisa memberi nama baru misa, id:idBaru lalu console.log(idBaru)
+        id:1,
+        name:'joko'
+    }
+    console.log(name);
+    //pemanggilan object lebih singkat dibanding
+    //const nama=obj.nama console.log(nama)
+ </script>
+</body>
+</html>
