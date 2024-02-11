@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh 14</title>
+</head>
+<body>
+    <h2>WINDOWS</h2>
+    <script>
+    function greeting(name){
+        alert('hello '+name);
+    }
+    function proses(callback){
+        var name=prompt('Tolong masukkan nama ');
+        callback(name);
+    }
+    proses(greeting);//akan menjalankan fungsi proses dulu
+    //setelah input nama akan menjalakan greeting
+
+
+    //fungsi dibawah sama dengan diatas
+    function input(callback){
+        var a=prompt('Masukkan nama');
+        callback(a);
+    }
+    input(function (a){//anonim function karena function tanpa nama ttp bisa dipanggil
+        alert('hello ' +a);
+        }
+    );
+    
+
+    //arrow function
+    const halo=(nama)=>{
+        alert('hello '+nama);
+    };
+    const prosesHalo=(callback)=>{
+        var gar=prompt('Panggil nama ');
+        callback(gar);
+    }
+    prosesHalo(halo);
+    </script>
+</body>
+</html>

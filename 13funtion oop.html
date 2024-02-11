@@ -105,7 +105,7 @@
     //dibawah adalah enkasulapsi karena menyembunyikan variable secara private dengan #
     class Ongkir {
         #pajak;
-        constructor(weight, pajak) {
+        constructor(weight) {
             this.#pajak = 1000;
             this.harga = this.hitungHarga(weight);
         }
@@ -122,7 +122,28 @@
     hasil.pajak = 5000; //tidak dihitung karena nilai pajak di private
     console.log(hasil.total); 
 
-    
+    //inheritance
+    class kurirOngkir extends Ongkir{
+        constructor(weight,pajak,name){
+            super(weight, pajak)
+            this.name=name
+        }
+    }
+    const petugas=new kurirOngkir(10,200,'joko')
+    console.log(petugas)
+
+    /////////////
+    //polymorph untuk mengganti variable dari class dengan method yang sama
+    class buyer extends Ongkir{
+        constructor(name){
+            this.name=name
+        }
+    }
+    const beli=new kurirOngkir('','','ninja')
+    console.log(beli.name)
+
 </script>
 </body>
 </html>
+
+
