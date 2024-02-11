@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh 13</title>
+</head>
+<body>
+    <h2>WINDOWS</h2>
+    <p id="p"></p>
+   <script>
+    function Person(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    const personOne = new Person('budi',31);
+    const personTwo = new Person('Jon',57);
+    console.log(personTwo);
+
+    function Orang(name,age){
+        this.name=name;
+
+    }
+    Orang.prototype.age=40;//nilai default jika variable age lain kosong maka akan 40
+    const orang1 = new Orang('budi');
+    orang1.age=23;//input age diluar fungsi
+    const orang2 = new Orang('Jon');
+    console.log(orang1.age);
+    console.log(orang2.age);
+
+   // Arrow function
+    const Mafia = () => {
+    this.name = 'Joko'; // Memperbaiki inisialisasi name
+
+    return {
+        name: this.name
+      };
+    };
+    const mafia2 = Mafia(); // Memanggil fungsi untuk mendapatkan objek
+    console.log(mafia2);
+
+    //class
+    class Job {
+        constructor(Aname,Aage){//nama harus contructor
+            this.name=Aname
+            this.age=Aage
+        }
+    }
+    //inisiasi class diawal, isinya bisa diisi setelahnya
+    const p=new Job('mark',25)
+    console.log(p.age);    
+
+    //class advance
+    class drink {
+        constructor(merkNew,beratNew){//nama harus contructor
+            this.name=merkNew
+            this.kg=this.baruMath()
+        }
+    baruMath(){//method di dalam class
+        return Math.floor(Math.random(100) * 100)//angka yang dirandom 1-99
+        }
+    }
+    const panggil=new drink('Hando')//console.log hanya memanggil method
+    console.log(panggil.baruMath());
+    console.log(panggil.kg);//sama saja dengan memanggil method secara langsung diatas
+
+    //static class
+    class school{
+        constructor(newName){
+        this.Sname=newName
+        }
+        static random(){
+        return new school('Arso')
+        }
+    }//untuk console.log harus memanggil class
+    console.log(school.random().Sname)
+
+    //Getter
+    class Dapat{
+        constructor(newName) {
+            this.nama = newName;
+        }
+        get getName(){
+            return this.nama;
+        }
+    }
+    const pa= new Dapat('Nana');
+    console.log(pa.getName)//memanggil method
+    //dengan get tidakk perlu memanggil invoke tanda () pada method
+
+    class Masyarakat{
+        constructor(newName, newAge, gender) {
+            this.name = newName;
+            this.age = newAge;
+            this.gender = gender;
+        }
+        
+        get getName(){
+            return ((this.gender === 'L' ? 'Hallo Tuan ' : 'Hallo Nyonya ' ) + this.name) ;
+            
+        }
+    }
+    const gen= new Masyarakat('Joko', 28, 'W');
+    console.log(gen.getName)
+
+    //class private dengan tanda #
+    //dibawah adalah enkasulapsi karena menyembunyikan variable secara private dengan #
+    class Ongkir {
+        #pajak;
+        constructor(weight, pajak) {
+            this.#pajak = 1000;
+            this.harga = this.hitungHarga(weight);
+        }
+        hitungHarga(weight) {
+            return weight * 2000;
+        }
+        get total() {
+            return this.#pajak + this.harga;
+        } 
+    }
+    
+    const hasil = new Ongkir(10);
+    console.log(hasil.total); //10 x 2000 = 20000 + 1000 pajak
+    hasil.pajak = 5000; //tidak dihitung karena nilai pajak di private
+    console.log(hasil.total); 
+
+    
+</script>
+</body>
+</html>
