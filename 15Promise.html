@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh 15</title>
+</head>
+<body>
+    <h2>WINDOWS</h2>
+    <script>  
+        //http get post      
+        const resource= 'https://jsonplaceholder.typicode.com/todos'
+        const options={method:'GET'}
+        fetch(resource,options)//hasil pending karna menunggu proses lain
+            .then(data=>data.json())//mengubah data steam ke json yang bisa dibaca nantinya
+            .then(data2=>console.log(data2))
+        //kode dibawah sama saja
+        fetch('https://jsonplaceholder.typicode.com/todos',{method:'GET'})
+        .then(sama=>sama.json())
+        .then(sama2=>console.log(sama2))
+        
+        const resource1= 'https://jsonplaceholder.typicode.com/todos'
+        const options1={method:'POST',body:JSON.stringify({//stringify adalah nama method bawaan
+            title:'belajar javascript',
+            completed:false,//status promise false
+            userId:10})}//contoh idnya random
+        fetch(resource1,options1)
+        .then(pos=>pos.json())
+        .then(pos=>console.log(pos))
+        .catch(error=>console.log('ada error',error))
+
+        //async & wait perubahan dari kode line 15
+        async function fetchData() {
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos', { method: 'GET' });
+            const data = await response.json();
+            console.log(data);}
+          
+          // Memanggil fungsi async fetchData
+          fetchData();
+          
+    </script>
+</body>
+</html>

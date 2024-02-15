@@ -5,6 +5,16 @@
 </head>
 <body>
     <h2>WINDOWS</h2>
+    <h1>Javascript bersifat single threaded(call stack) atau syncronous</h1>
+    <p>program dijalankan dari urutan atas ke bawah. dalam javascript asyncronous</p>
+    <p>disediakan oleh runtime environtment dalam browser yang menjalankan fungsi web api</p>
+    <p>terdapat event loop yang akan memasukkan javascript ke queque stack atau ansycronous</p>
+    <p>contoh: setTimeout adalah fungsi asyncronous, saat dijalankan akan masuk event loop, lalu ke callstack
+        di callstack, javascript akan sadar itu fungsi runtime environtment, kemudia akan dimasukan ke web api
+        setelah itu masuk ke queque stack. saat fungsi itu di queque maka callstack bisa menjalakan fungsi lain
+        karena queque dijalankan sesuah callstack. saat callstack tidak ada fungsi lain, maka event loop
+        mengecek queque dan memindahkannya ke callstack dan di dijalankan.
+    </p>
     <script>
     function greeting(name){
         alert('hello '+name);
@@ -37,6 +47,34 @@
         callback(gar);
     }
     prosesHalo(halo);
-    </script>
+
+    //array urut
+    function ab(a,b){
+        return a-b
+    }
+    var list=[1,23,2000,40,500]
+    console.log(list.sort(ab));
+    //a-b untuk mengecek angka mana paling kecil
+
+    //sama saja dengan diatas
+    var list1=[1,23,2000,40,500]
+    console.log(list1.sort(function (a,b){
+        return a - b }));
+
+    //sama saja tapi memakai arrow function
+    var list2=[1,23,2000,40,500]
+    console.log(list2.sort((a,b)=>{
+        return a-b; }
+        ));
+
+    //sama saja tapi arrow function satu baris
+    var list3=[1,23,2000,40,500]
+    console.log(list3.sort((a,b)=>a-b));
+    //function menjadi anonim tanpa nama di sort(()) lalu langsung melakukan return a-b
+
+    function logTwo(){console.log(1)}
+    console.log(2);setTimeout(logTwo,2000); console.log(3);
+    //logtwo akan dijalankan selang 2 detik setelah log2 dan log3 berjalan 
+</script>
 </body>
 </html>
